@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: black;
+            color: white;
+        }
+
+        /* Navbar container with space between name and links */
+        .navbar-container {
+            display: flex;
+            justify-content: space-between; /* Pushes name to the left and links to the right */
+            align-items: center;
+            background-color: white;
+            padding: 15px 20px; /* Adds spacing */
+        }
+
+        /* Name styling with more pazzazz */
+        .navbar-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navbar section */
+        .navbar {
+            display: flex;
+            width: 50%; /* Navbar occupies only right half */
+        }
+
+        .navbar a {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border: 2px solid black; /* Black outline */
+            background-color: gray; /* Background color */
+        }
+
+        .navbar a.active {
+            background-color: blue;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-container img {
+            width: 250px;
+            height: 250px;
+            background-color: gray;
+        }
+
+        .text-container {
+            flex: 2;
+            padding-left: 20px;
+        }
+
+        .text-container h1 {
+            font-size: 48px;
+        }
+
+        .text-container p {
+            font-size: 18px;
+            line-height: 1.5;
+            max-width: 500px;
+        }
+
+        .resume-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            border: 2px solid white;
+            padding: 8px 15px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar with name on the left -->
+    <div class="navbar-container">
+        <div class="navbar-name">Kyle Mui</div>
+        <div class="navbar">
+            <a href="/" class="active">About Me</a>
+            <a href="/Projects">Projects</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="image-container">
+            <img src="https://via.placeholder.com/250" alt="Profile Image">
+        </div>
+        <div class="text-container">
+            <h1>About me</h1>
+            <p>
+                This is a paragraph about me. It contains details about my background, skills, and experience.
+            </p>
+            <a href="#" class="resume-link">My Resume</a>
+        </div>
+    </div>
+
+</body>
+</html>
