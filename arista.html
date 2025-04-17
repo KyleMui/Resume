@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arista Projects</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 15px 20px;
+        }
+
+        .navbar-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .navbar {
+            display: flex;
+            width: 50%;
+        }
+
+        .navbar a {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border: 2px solid black;
+            background-color: gray;
+        }
+
+        .navbar a.active {
+            background-color: blue;
+        }
+
+        .section {
+            margin-top: 40px;
+        }
+
+        h2 {
+            color: lightblue;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar-container">
+        <div class="navbar-name">Kyle Mui</div>
+        <div class="navbar">
+            <a href="index.html">About Me</a>
+            <a href="Project.html">Projects</a>
+            <a href="Contact.html">Contact Me</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Arista Networks Internship Projects</h2>
+        <ul>
+            <li><strong>CloudVision Dashboard Automation:</strong> Wrote Python scripts to manage and display device tags and visualize real-time connections within Arista’s CloudVision Studio.</li>
+            <li><strong>Spine-and-Leaf Network Generation:</strong> Developed a Mako + Python script to construct spine-and-leaf topologies, simplifying deployment in CloudBuilder and CloudVision Studio.</li>
+            <li><strong>PyAVD Configuration:</strong> Customized Arista’s PyAVD Python package to be compatible with CloudVision Studio for configuration automation.</li>
+            <li><strong>Git-Based Configuration Management:</strong> Used Git to manage configurations and create pull requests across Arista’s internal infrastructure.</li>
+            <li><strong>Certification Guide Creation:</strong> Created a comprehensive study plan to help interns prepare for Arista ACE: L1 Certification.</li>
+        </ul>
+    </div>
+</body>
+</html>
