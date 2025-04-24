@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>About Me</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +16,6 @@
             background-color: black;
             color: white;
         }
-
         .navbar-container {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -24,45 +24,37 @@
             padding: 20px 40px;
             width: 100%;
         }
-
         .navbar-left {
             justify-self: start;
         }
-
         .navbar-center {
             display: flex;
             justify-content: center;
             gap: 40px;
         }
-
         .navbar-right {
             display: flex;
             justify-content: flex-end;
             gap: 20px;
         }
-
         .navbar-name {
             font-size: 30px;
             font-weight: bold;
             color: black;
         }
-
         .navbar-center a {
             color: black;
             text-decoration: none;
             font-weight: bold;
             font-size: 25px;
         }
-
         .navbar-center a:hover {
             text-decoration: underline;
         }
-
         .navbar-center a.active {
             color: blue;
             position: relative;
         }
-
         .navbar-center a.active::after {
             content: "";
             position: absolute;
@@ -72,66 +64,62 @@
             height: 2px;
             background-color: blue;
         }
-
         .navbar-right img {
             height: 24px;
+            filter: invert(1);
             transition: transform 0.2s ease;
         }
-
         .navbar-right img:hover {
             transform: scale(1.2);
         }
-
-        .projects, .certifications {
+        .content {
+            display: flex;
+            align-items: center;
             padding: 40px;
-            margin: 0 auto;
-            max-width: 1000px;
+            gap: 40px;
         }
-
-        h2 {
-            font-size: 28px;
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 300px;
+            height: auto;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .text-container {
+            flex: 2;
+        }
+        .text-container h1 {
+            font-size: 48px;
             margin-bottom: 20px;
         }
-
-        .project-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: space-around;
-        }
-
-        .project-item {
-            width: 250px;
-            text-align: center;
-        }
-
-        .project-item img {
-            width: 100%;
-            height: 180px;
-            object-fit: contain;
-            background-color: lightgray;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-item img:hover {
-            transform: scale(1.05);
-            cursor: pointer;
-        }
-
-        .certifications ul {
-            padding-left: 20px;
-            line-height: 1.8;
-        }
-
-        .certifications li strong {
+        .text-container p {
             font-size: 18px;
+            line-height: 1.5;
+            max-width: 500px;
         }
-
-        .certifications ul ul {
-            padding-left: 20px;
+        .resume-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            border: 2px solid white;
+            padding: 8px 15px;
+            width: fit-content;
+        }
+        .resume-note {
+            margin-top: 10px;
             font-size: 16px;
+            color: white;
+            width: fit-content;
+            padding-left: 2px;
         }
     </style>
 </head>
@@ -142,8 +130,8 @@
         </div>
         <div class="navbar-center">
             <a href="index.html">Home</a>
-            <a href="about_me.html">About Me</a>
-            <a href="Project.html" class="active">Projects</a>
+            <a href="about_me.html" class="active">About Me</a>
+            <a href="Project.html">Projects</a>
             <a href="Kyle_Mui_Resume.pdf" target="_blank">Resume</a>
         </div>
         <div class="navbar-right">
@@ -157,8 +145,7 @@
                 <img src="email_icon.png" alt="Copy Email">
             </button>
         </div>
-    </div>  
-
+    </div>
     <script>
         document.getElementById("copy-email").addEventListener("click", (e) => {
             navigator.clipboard.writeText("kylemui04@gmail.com")
@@ -197,78 +184,26 @@
                 });
         });
     </script>
-
-    <div class="projects">
-        <h2>Projects</h2>
-        <p style="margin-bottom: 20px; font-style: italic;">
-            Click on an image to learn more about each project.
-        </p>        
-        <div class="project-list">
-            <div class="project-item">
-                <a href="arista.html">
-                    <img src="arista.jpg" alt="Arista Internship" title="Arista Internship">
-                </a>
-                <p><strong>Arista Internship</strong></p>
-            </div>
-
-            <div class="project-item">
-                <a href="cmr.html">
-                    <img src="cmr_logo.jpg" alt="Cornell Mars Rover" title="Cornell Mars Rover">
-                </a>
-                <p><strong>Cornell Mars Rover</strong></p>
-            </div>
+    
+    <div class="content">
+        <div class="image-container">
+            <img src="Profile_Picture.jpg" alt="Profile Image">
+        </div>
+        <div class="text-container">
+            <h1>About Me</h1>
+            <p>
+                My name is Kyle Mui, and I am an Electrical and Computer 
+                Engineering student with a strong interest in embedded systems, 
+                robotics, and system-level design. I take a methodical and 
+                team-oriented approach to problem-solving, with a focus on 
+                building reliable, efficient solutions across hardware and 
+                software domains. I like environments with continuous learning and value 
+                opportunities that challenge me to think critically, lead with purpose, 
+                and contribute meaningfully to technical projects and communities.
+            </p>
+            <a href="Kyle_Mui_Resume.pdf" class="resume-link" download>My Resume</a>
+            <p class="resume-note">Click the link above to download my resume.</p>
         </div>
     </div>
-
-    <div class="certifications">
-        <h2>Certifications</h2>
-        <ul>
-            <li><strong>Arista ACE: L1 Certification</strong>
-                <ul>
-                    <li>Ability to configure basic networks based on Leaf-Spine architecture</li>
-                    <li>Understanding of fundamental network protocols</li>
-                    <li>Applied configuration via Arista’s CloudVision platform</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-<script>
-    document.getElementById("copy-email").addEventListener("click", (e) => {
-        navigator.clipboard.writeText("kylemui04@gmail.com").then(() => {
-            const tooltip = document.createElement("div");
-            tooltip.innerText = "Copied!";
-            tooltip.style.position = "fixed";
-            tooltip.style.background = "#222";
-            tooltip.style.color = "white";
-            tooltip.style.fontSize = "16px";
-            tooltip.style.fontWeight = "bold";
-            tooltip.style.padding = "10px 15px";
-            tooltip.style.borderRadius = "6px";
-            tooltip.style.boxShadow = "0 2px 8px rgba(0,0,0,0.3)";
-            tooltip.style.zIndex = 1000;
-            tooltip.style.pointerEvents = "none";
-            tooltip.style.opacity = "0";
-            tooltip.style.transition = "opacity 0.3s ease";
-
-            const tooltipWidth = 120;
-            const left = Math.min(window.innerWidth - tooltipWidth - 10, e.clientX + 10);
-            const top = Math.max(10, e.clientY - 40);
-
-            tooltip.style.left = `${left}px`;
-            tooltip.style.top = `${top}px`;
-
-            document.body.appendChild(tooltip);
-            requestAnimationFrame(() => {
-                tooltip.style.opacity = "1";
-            });
-
-            setTimeout(() => {
-                tooltip.style.opacity = "0";
-                setTimeout(() => tooltip.remove(), 300);
-            }, 1500);
-        });
-    });
-</script>
 </body>
 </html>
