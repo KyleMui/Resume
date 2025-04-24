@@ -6,73 +6,33 @@
   <title>
    Home - Kyle Mui
   </title>
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <style>
-   body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
             font-family: 'Courier New', Courier, monospace;
             background-color: black;
             color: white;
             margin: 0;
             padding: 0;
         }
-        .navbar-container {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            background-color: white;
-            padding: 20px 40px;
-        }
-        .navbar-left {
-            justify-self: start;
-        }
-        .navbar-center {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
-        .navbar-right {
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-        .navbar-name {
-            font-size: 30px;
-            font-weight: bold;
-            color: black;
-        }
-        .navbar-center a {
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 25px;
-        }
-        .navbar-center a:hover {
-            text-decoration: underline;
-        }
-        .navbar-center a.active {
-            color: blue;
-            position: relative;
-        }
-        .navbar-center a.active::after {
-            content: "";
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: blue;
-        }
-        .navbar-right img {
-            height: 24px;
-            transition: transform 0.2s ease;
-        }
-        .navbar-right img:hover {
-            transform: scale(1.2);
-        }
         .main-content {
             height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: flex-start; 
+            text-align: left;
+            padding: 100px 80px;
         }
         .main-content h1 {
             font-size: 48px;
@@ -137,36 +97,6 @@
     I'm Kyle Mui, an Electrical and Computer Engineering student at Cornell with a focus on embedded systems, robotics, and full-stack development. I enjoy solving cross-layer technical problems and designing solutions that blend hardware and software for real-world impact.
    </p>
   </div>
-  <script>
-   const btn = document.getElementById("copy-email");
-        btn.addEventListener("click", (e) => {
-            navigator.clipboard.writeText("kylemui04@gmail.com").then(() => {
-                const tooltip = document.createElement("div");
-                tooltip.innerText = "Copied!";
-                tooltip.style.position = "fixed";
-                tooltip.style.left = `${e.clientX + 10}px`;
-                tooltip.style.top = `${e.clientY - 30}px`;
-                tooltip.style.background = "#222";
-                tooltip.style.color = "white";
-                tooltip.style.fontSize = "16px";
-                tooltip.style.fontWeight = "bold";
-                tooltip.style.padding = "10px 15px";
-                tooltip.style.borderRadius = "6px";
-                tooltip.style.boxShadow = "0 2px 8px rgba(0,0,0,0.3)";
-                tooltip.style.zIndex = 1000;
-                tooltip.style.pointerEvents = "none";
-                tooltip.style.opacity = "0";
-                tooltip.style.transition = "opacity 0.3s ease";
-                document.body.appendChild(tooltip);
-                requestAnimationFrame(() => {
-                    tooltip.style.opacity = "1";
-                });
-                setTimeout(() => {
-                    tooltip.style.opacity = "0";
-                    setTimeout(() => tooltip.remove(), 300);
-                }, 1500);
-            });
-        });
-  </script>
+  <script src="copyEmail.js" defer></script>
  </body>
 </html>
