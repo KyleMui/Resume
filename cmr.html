@@ -5,95 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cornell Mars Rover</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Courier New', Courier, monospace;
             background-color: black;
             color: white;
-            margin: 0;
-            padding: 20px;
         }
 
         .navbar-container {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
             background-color: white;
-            padding: 15px 20px;
+            padding: 20px 40px;
+            width: 100%;
+        }
+
+        .navbar-left {
+            justify-self: start;
+        }
+
+        .navbar-center {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .navbar-right {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
         }
 
         .navbar-name {
-            font-size: 24px;
+            font-size: 30px;
             font-weight: bold;
             color: black;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
-        .navbar {
-            display: flex;
-            width: 50%;
-        }
-
-        .navbar a {
-            flex: 1;
-            padding: 15px;
-            text-align: center;
+        .navbar-center a {
+            color: black;
             text-decoration: none;
-            color: white;
             font-weight: bold;
-            border: 2px solid black;
-            background-color: gray;
+            font-size: 25px;
         }
 
-        .navbar a.active {
+        .navbar-center a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-center a.active {
+            color: blue;
+            position: relative;
+        }
+
+        .navbar-center a.active::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
             background-color: blue;
         }
 
-        .section {
-            margin-top: 40px;
+        .navbar-right img {
+            height: 24px;
+            transition: transform 0.2s ease;
         }
 
-        h2 {
+        .navbar-right img:hover {
+            transform: scale(1.2);
+        }
+
+        .content-wrapper {
+            padding: 40px;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .content-wrapper h2 {
             color: lightblue;
+            margin-bottom: 20px;
         }
 
-        ul {
+        .content-wrapper ul {
             padding-left: 20px;
             line-height: 1.8;
+        }
+
+        .content-wrapper img {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            max-width: 100%;
         }
     </style>
 </head>
 <body>
     <div class="navbar-container">
-        <div class="navbar-name">Kyle Mui</div>
-        <div class="navbar">
+        <div class="navbar-left">
+            <span class="navbar-name">Kyle Mui</span>
+        </div>
+
+        <div class="navbar-center">
             <a href="index.html">About Me</a>
             <a href="Project.html" class="active">Projects</a>
-            <a href="Contact.html">Contact Me</a>
+            <a href="Kyle_Mui_Resume.pdf" target="_blank">Resume</a>
+        </div>
+
+        <div class="navbar-right">
+            <a href="https://www.linkedin.com/in/kyle-mui/" target="_blank" title="LinkedIn">
+                <img src="linkedin_icon.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/YOUR_USERNAME" target="_blank" title="GitHub">
+                <img src="github_icon.png" alt="GitHub">
+            </a>
+            <button id="copy-email" title="Copy Email" style="background: none; border: none; cursor: pointer;">
+                <img src="email_icon.png" alt="Copy Email">
+            </button>
         </div>
     </div>
 
-    <div class="section" style="display: flex; gap: 40px; align-items: flex-start;">
-        <!-- Left: Text content -->
+    <script>
+        document.getElementById("copy-email").addEventListener("click", () => {
+            navigator.clipboard.writeText("kylemui04@gmail.com")
+                .then(() => {
+                    alert("Email copied to clipboard!");
+                })
+                .catch(err => {
+                    console.error("Failed to copy email: ", err);
+                });
+        });
+    </script>
+
+    <div class="content-wrapper">
         <div style="flex: 1;">
             <h2>Cornell Mars Rover Project</h2>
-            <ul style="line-height: 1.8;">
+            <ul>
                 <li>Led the electrical subteam to design and assemble critical PCB systems for mobility, sensing, and control.</li>
                 <li>Delegated and mentored team members across multiple design and testing tasks.</li>
                 <li>Collaborated with software, mechanical, and science teams to integrate subsystems for competition readiness.</li>
                 <li>Participated in the University Rover Challenge (URC), a global collegiate robotics competition.</li>
             </ul>
         </div>
-    
-        <!-- Right: Image -->
+
         <div style="flex: 1; display: flex; justify-content: center;">
-            <img src="cmr.jpg" 
-                 alt="Cornell Mars Rover Team" 
-                 style="max-width: 100%; 
-                        border-radius: 10px; 
-                        box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+            <img src="cmr.jpg" alt="Cornell Mars Rover Team">
         </div>
     </div>
-    
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Projects</title>
     <style>
         * {
             margin: 0;
@@ -12,151 +12,193 @@
         }
         body {
             font-family: 'Courier New', Courier, monospace;
-            background-color: #f4f4f4;
-            color: black
-        }
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: black;
-            padding: 15px 20px;
-        }
-        .navbar-name {
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-        }
-        .navbar {
-            display: flex;
-            width: 50%;
-        }
-        .navbar a {
-            flex: 1;
-            padding: 15px;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            border: 2px solid black;
-            background-color: gray;
-        }
-        .navbar a.active {
-            background-color: blue;
-        }
-        .projects, .certifications {
-            padding: 20px;
             background-color: white;
-            margin: 20px;
-            border-radius: 8px;
-        }
-        h2 {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .project-list {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .project-item {
-            text-align: center;
-            padding: 10px;
-        }
-        .project-item img {
-            width: 150px;
-            height: 100px;
-            background-color: lightgray;
-            border-radius: 5px;
-        }
-        .project-item img:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            color: black;
         }
 
+        .navbar-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            background-color: white;
+            padding: 20px 40px;
+            width: 100%;
+        }
+
+        .navbar-left {
+            justify-self: start;
+        }
+
+        .navbar-center {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .navbar-right {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .navbar-name {
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .navbar-center a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .navbar-center a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-center a.active {
+            color: blue;
+            position: relative;
+        }
+
+        .navbar-center a.active::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: blue;
+        }
+
+        .navbar-right img {
+            height: 24px;
+            transition: transform 0.2s ease;
+        }
+
+        .navbar-right img:hover {
+            transform: scale(1.2);
+        }
+
+        .projects, .certifications {
+            padding: 40px;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-around;
+        }
+
+        .project-item {
+            width: 250px;
+            text-align: center;
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            background-color: lightgray;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-item img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .certifications ul {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .certifications li strong {
+            font-size: 18px;
+        }
+
+        .certifications ul ul {
+            padding-left: 20px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
     <div class="navbar-container">
-        <div class="navbar-name">Kyle Mui</div>
-        <div class="navbar">
+        <div class="navbar-left">
+            <span class="navbar-name">Kyle Mui</span>
+        </div>
+    
+        <div class="navbar-center">
             <a href="index.html">About Me</a>
             <a href="Project.html" class="active">Projects</a>
-            <a href="Contact.html">Contact Me</a>
-        </div>               
-    </div>
+            <a href="Kyle_Mui_Resume.pdf" target="_blank">Resume</a>
+        </div>
     
-    <div class="projects" id="projects">
+        <div class="navbar-right">
+            <a href="https://www.linkedin.com/in/kyle-mui/" target="_blank" title="LinkedIn">
+                <img src="linkedin_icon.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/YOUR_USERNAME" target="_blank" title="GitHub">
+                <img src="github_icon.png" alt="GitHub">
+            </a>
+            <button id="copy-email" title="Copy Email" style="background: none; border: none; cursor: pointer;">
+                <img src="email_icon.png" alt="Copy Email">
+            </button>
+        </div>
+    </div>     
+
+    <script>
+        document.getElementById("copy-email").addEventListener("click", () => {
+            navigator.clipboard.writeText("kylemui04@gmail.com")
+                .then(() => {
+                    alert("Email copied to clipboard!");
+                })
+                .catch(err => {
+                    console.error("Failed to copy email: ", err);
+                });
+        });
+    </script>
+
+    <div class="projects">
         <h2>Projects</h2>
-        <p style="margin-top: 10px; margin-bottom: 20px; font-style: italic;">
+        <p style="margin-bottom: 20px; font-style: italic;">
             Click on an image to learn more about each project.
         </p>        
         <div class="project-list">
             <div class="project-item">
                 <a href="arista.html">
-                    <img src="arista.jpg" 
-                         title="Click to learn more about the Arista Internship"
-                         style="width: 250px; 
-                                height: 180px; 
-                                object-fit: contain; 
-                                background-color: white; 
-                                border-radius: 5px;">
-
+                    <img src="arista.jpg" alt="Arista Internship" title="Arista Internship">
                 </a>
-                <p><strong>Arista Internship</strong><br></p>
+                <p><strong>Arista Internship</strong></p>
             </div>
-            
+
             <div class="project-item">
                 <a href="cmr.html">
-                    <img src="cmr_logo.jpg" 
-                         title="Click to learn more about Cornell Mars Rover"
-                         style="width: 250px; 
-                                height: 180px; 
-                                object-fit: contain; 
-                                background-color: white; 
-                                border-radius: 5px;">
-
+                    <img src="cmr_logo.jpg" alt="Cornell Mars Rover" title="Cornell Mars Rover">
                 </a>
-                <p><strong>Cornell Mars Rover</strong><br></p>
+                <p><strong>Cornell Mars Rover</strong></p>
             </div>
-            <!-- Placeholder for additional projects -->
-            <!--          
-            <div class="project-item">
-                <a href="placeholder.html">
-                    <img src="placeholder.png" 
-                         title="Click to learn more about Project 3"
-                         style="width: 250px; 
-                                height: 180px; 
-                                object-fit: contain; 
-                                background-color: white; 
-                                border-radius: 5px;">
-
-                </a>
-                <p><strong>Project 3</strong><br></p>
-            </div>
-            <div class="project-item">
-                <a href="placeholder.html">
-                    <img src="placeholder.png" 
-                         title="Click to learn more about Project 4"
-                         style="width: 250px; 
-                                height: 180px; 
-                                object-fit: contain; 
-                                background-color: white; 
-                                border-radius: 5px;">
-
-                </a>
-                <p><strong>Project 4</strong><br></p>
-            -->
         </div>
     </div>
-    
-    <div class="certifications" id="certifications">
+
+    <div class="certifications">
         <h2>Certifications</h2>
-        <ul style="padding-left: 20px; line-height: 1.8;">
+        <ul>
             <li><strong>Arista ACE: L1 Certification</strong>
-                <ul style="padding-left: 40px;">
+                <ul>
                     <li>Ability to configure basic networks based on Leaf-Spine architecture</li>
                     <li>Understanding of fundamental network protocols</li>
                     <li>Applied configuration via Arista’s CloudVision platform</li>
@@ -164,7 +206,5 @@
             </li>
         </ul>
     </div>
-    
-
 </body>
 </html>
