@@ -20,6 +20,7 @@
             font-family: 'Courier New', Courier, monospace;
             background-color: white;
             color: black;
+            padding-top: 80px;
         }
         .content-wrapper {
             padding: 40px;
@@ -43,6 +44,14 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
             max-width: 100%;
         }
+
+        .site-footer {
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+            color: gray;
+        }
+
     </style>
  </head>
  <body>
@@ -67,6 +76,7 @@
     </a>
    </div>
    <div class="navbar-right">
+    <span style="font-weight: bold; font-size: 18px; color: white;">Contact me:</span>
     <a href="https://www.linkedin.com/in/kyle-mui/" target="_blank" title="LinkedIn">
      <img alt="LinkedIn" src="linkedin_icon.png"/>
     </a>
@@ -79,9 +89,20 @@
    </div>
   </div>
   <div style="padding: 20px 40px;">
-   <a href="Project.html" style="background-color: lightblue; color: black; padding: 8px 16px; border-radius: 10px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 16px;">
-    ← Go back to Projects
-   </a>
+    <a href="Project.html" style="
+            position: fixed;
+            top: 80px; /* lower than navbar */
+            left: 30px;
+            background-color: rgba(173, 216, 230, 0.95); /* more opaque lightblue */
+            color: black;
+            padding: 10px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            z-index: 1001;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            ">← Back to Projects</a>
   </div>
 
 
@@ -110,5 +131,9 @@
    </div>
   </div>
   <script src="copyEmail.js" defer></script>
+
+  <footer class="site-footer">
+    © 2025 Kyle Mui
+  </footer>
  </body>
 </html>

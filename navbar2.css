@@ -5,6 +5,13 @@
     background-color: black;
     padding: 20px 40px;
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+body {
+    padding-top: 80px; /* Add padding to avoid content hiding behind navbar */
 }
 
 .navbar-left {

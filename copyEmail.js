@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("copy-email");
     if (btn) {
         btn.addEventListener("click", (e) => {
-            navigator.clipboard.writeText("kylemui04@gmail.com").then(() => {
+            navigator.clipboard.writeText("km776@cornell.edu").then(() => {
                 const tooltip = document.createElement("div");
                 tooltip.innerText = "Copied!";
                 tooltip.style.position = "fixed";
